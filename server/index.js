@@ -8,14 +8,7 @@ app.use('/restaurants/:id/', express.static(`${__dirname}/../client/dist/`));
 app.use(bodyParser());
 
 app.get('/buildPage/restaurants/:id/', (req, res) => {
-  // axios.get(`http://localhost:3002/restaurants/${req.params.id}/`)
-  //   .then(response => {
-  //     res.send(response.data);
-  //   })
-  //   .catch(err => {
-  //     throw err;
-  //   });
-  axios.get(`http://localhost:3002/api/reservations/bundle/`)
+  axios.get(`http://localhost:3001/api/reservations/bundle/`)
     .then(response => {
       res.send(response.data);
     })
